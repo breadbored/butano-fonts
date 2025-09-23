@@ -1,6 +1,6 @@
 # Fonts for Butano
 
-This repository contains font assets for Game Boy Advance development using the Butano engine.
+Font assets for Game Boy Advance development using the Butano engine
 
 ## Integration with Butano Projects
 
@@ -12,10 +12,10 @@ Clone this repository or add it as a git submodule to your project:
 
 ```bash
 # Option A: Clone to a subdirectory
-git clone <repository-url> arthur
+git clone <repository-url> butano-fonts
 
 # Option B: Add as submodule
-git submodule add <repository-url> arthur
+git submodule add <repository-url> butano-fonts
 ```
 
 ### 2. Update Your Makefile
@@ -25,7 +25,10 @@ Add the following lines to your Butano project's `Makefile`:
 ```makefile
 # Butano Fonts
 FONTDIR = butano-fonts
-include $(realpath $(FONTDIR))/font_arthur.mak
+ifndef FONTDIRABS
+	export FONTDIRABS := $(realpath $(FONTDIR))
+endif
+include $(FONTDIRABS)/font_arthur.mak
 ```
 
 ### 3. Example Integration
@@ -41,12 +44,16 @@ INCLUDES    := include
 GRAPHICS    := graphics
 # ... other standard Butano variables ...
 
-# Fonts integration
-FONTDIR = arthur
+# Butano Fonts
+FONTDIR = butano-fonts
+ifndef FONTDIRABS
+	export FONTDIRABS := $(realpath $(FONTDIR))
+endif
+include $(FONTDIRABS)/font_arthur.mak
 
 # Include main butano makefile
 include $(LIBBUTANOABS)/butano.mak
 ```
 
-The `fonts_arthur.mk` file will automatically add the necessary `INCLUDES` and `GRAPHICS` paths to your build process
+The `fonts_arthur.mak` file will automatically add the necessary `INCLUDES` and `GRAPHICS` paths to your build process
 when `FONTDIR` is properly set.
