@@ -2,6 +2,16 @@
 
 Font assets for Game Boy Advance development using the Butano engine
 
+## Table of Contents
+
+- [Integration](#integration-with-butano-projects)
+- [Preview](#preview)
+  - [Arthur](#arthur)
+    - [8x8](#8x8)
+    - [8x12](#8x12)
+    - [16x16](#16x16)
+    - [16x24](#16x24)
+
 ## Integration with Butano Projects
 
 To use these fonts in your Butano project, follow these steps:
@@ -57,3 +67,23 @@ include $(LIBBUTANOABS)/butano.mak
 
 The `fonts_arthur.mak` file will automatically add the necessary `INCLUDES` and `GRAPHICS` paths to your build process
 when `FONTDIR` is properly set.
+
+## Preview
+
+### Arthur
+
+#### 8x8
+
+![Arthur 8x8 Font Preview](fonts/arthur/preview/arthur8x8.png)
+
+#### 8x12
+
+![Arthur 8x12 Font Preview](fonts/arthur/preview/arthur8x12.png)
+
+#### 16x16
+
+![Arthur 16x16 Font Preview](fonts/arthur/preview/arthur16x16.png)
+
+#### 16x24
+
+![Arthur 16x24 Font Preview](fonts/arthur/preview/arthur16x24.png)
